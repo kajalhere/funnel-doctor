@@ -1,10 +1,10 @@
 # Plan — Funnel Doctor
 
 ## Week 1: Set up and plan
-- [ ] Define funnel steps: Visit → View product → Add to cart → Start checkout → Pay
-- [ ] Write the one core question: "Why do users quit before paying, and what fix would help?"
-- [ ] Create GitHub repo with folders: data, sql, notebooks, docs
-- [ ] Write project-overview.md (this file's sibling)
+- [X] Define funnel steps: Visit → View product → Add to cart → Start checkout → Pay
+- [X] Write the one core question: "Why do users quit before paying, and what fix would help?"
+- [X] Create GitHub repo with folders: data, sql, notebooks, docs
+- [X] Write project-overview.md (this file's sibling)
 
 ## Week 2: Create the data
 - [ ] Generate ~100,000 users and events in Python (user ID, event, timestamp, device, city, source); event names: visit, view_product, add_to_cart, start_checkout, payment_success
