@@ -3,12 +3,14 @@
 Newest entries at top. One entry per work session.
 
 ---
-"Created the funnel-doctor repo in VS Code and pushed it to GitHub."
+### 2026-09-29
+- Generated 100,000 users plus 2,000 bots with duplicate events and missing values, and loaded everything into PostgreSQL.
 
 ### 2026-09-28
 - Changed project topic from a food-ordering app to an online shopping app/website (funnel: Visit → View product → Add to cart → Start checkout → Pay).
 - Updated plan.md, project-overview.md and learning-notes.md to match; logged the decision in decisions.md.
 - **Next:** Create GitHub repo (folders: data, sql, notebooks, docs) and finish Week 1 tasks.
+- "Created the funnel-doctor repo in VS Code and pushed it to GitHub."
 
 ### 2026-09-27
 - Decided on project scope: funnel diagnosis + A/B test on synthetic event data.

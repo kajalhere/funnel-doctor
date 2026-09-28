@@ -7,10 +7,10 @@
 - [X] Write project-overview.md (this file's sibling)
 
 ## Week 2: Create the data
-- [ ] Generate ~100,000 users and events in Python (user ID, event, timestamp, device, city, source); event names: visit, view_product, add_to_cart, start_checkout, payment_success
-- [ ] Build in realistic patterns (mobile drops more at checkout, slow pages lose more users)
-- [ ] Add intentional mess: duplicate events, missing values, bot-like users
-- [ ] Load into PostgreSQL
+- [X] Generate ~100,000 users and events in Python (user ID, event, timestamp, device, city, source); event names: visit, view_product, add_to_cart, start_checkout, payment_success
+- [X] Build in realistic patterns (mobile drops more at checkout, slow pages lose more users)
+- [X] Add intentional mess: duplicate events, missing values, bot-like users
+- [X] Load into PostgreSQL
 
 ## Week 3: Clean and find the leak
 - [ ] Write SQL/Python checks to find and remove duplicates and bots
