@@ -1,8 +1,9 @@
 """
-Funnel Doctor - synthetic data generator (Part 1: users)
+Funnel Doctor - synthetic data generator (Parts 1-2: users and events)
 
 Funnel: visit -> view_product -> add_to_cart -> start_checkout -> payment_success
-Part 1 creates the users. Later parts will add events, experiment groups and intentional mess.
+Part 1 creates the users. Part 2 creates the events (how far each user gets in the funnel).
+Later parts will add experiment groups and intentional mess.
 """
 
 import numpy as np
@@ -42,8 +43,54 @@ def generate_users(n=N_USERS):
     return users
 
 
+# ---------- Part 2: events ----------
+FUNNEL = ["visit", "view_product", "add_to_cart", "start_checkout", "payment_success"]
+
+# Chance a user moves on to this step, given they reached the step before it.
+# The big gap is at checkout: mobile users quit much more often than desktop users.
+STEP_PROB = {
+    "view_product":    {"desktop": 0.60, "mobile": 0.55, "tablet": 0.55},
+    "add_to_cart":     {"desktop": 0.30, "mobile": 0.25, "tablet": 0.27},
+    "start_checkout":  {"desktop": 0.50, "mobile": 0.45, "tablet": 0.47},
+    "payment_success": {"desktop": 0.70, "mobile": 0.45, "tablet": 0.50},
+}
+# Slow pages reduce the chance of moving on (checkout is hit hardest).
+SLOW_PAGE_FACTOR = {"view_product": 0.85, "add_to_cart": 0.85,
+                    "start_checkout": 0.85, "payment_success": 0.80}
+
+
+def generate_events(users):
+    """One row per event. A user only reaches a step if they passed all steps before it."""
+    n = len(users)
+    alive = np.ones(n, dtype=bool)               # everyone starts with a visit
+    last_time = users["first_visit"].copy()
+    frames = [pd.DataFrame({"user_id": users["user_id"], "event": "visit",
+                            "timestamp": users["first_visit"]})]
+
+    for step in FUNNEL[1:]:
+        p = users["device"].map(STEP_PROB[step]).to_numpy()
+        p = np.where(users["page_speed"] == "slow", p * SLOW_PAGE_FACTOR[step], p)
+        alive = alive & (rng.random(n) < p)      # drop out here with probability 1 - p
+
+        # each step happens 1-30 minutes after the previous one
+        last_time = last_time + pd.to_timedelta(rng.integers(1, 31, size=n), unit="m")
+        frames.append(pd.DataFrame({"user_id": users.loc[alive, "user_id"],
+                                    "event": step,
+                                    "timestamp": last_time[alive]}))
+
+    events = pd.concat(frames, ignore_index=True)
+    return events.sort_values(["user_id", "timestamp"]).reset_index(drop=True)
+
+
 if __name__ == "__main__":
     users = generate_users()
-    print(users.head())
-    print("\nRows:", len(users))
-    print("\nDevice share:\n", users["device"].value_counts(normalize=True).round(3))
+    events = generate_events(users)
+
+    print(events.head(8))
+    print("\nUsers:", len(users), "| Events:", len(events))
+
+    # quick sanity check: users per funnel step and drop-off
+    counts = events.groupby("event")["user_id"].nunique().reindex(FUNNEL)
+    summary = pd.DataFrame({"users": counts,
+                            "drop_off_%": (100 * (1 - counts / counts.shift(1))).round(1)})
+    print("\nFunnel:\n", summary)
