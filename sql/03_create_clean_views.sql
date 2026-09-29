@@ -4,6 +4,7 @@
 -- users_clean: fills missing device and city with 'Unknown' so no users are lost
 -- Check: events_dedup should return 257,341 rows (265,061 - 7,720)
 
+-- View 1: remove duplicate events 
 -- Create a duplicate-free events view
 CREATE VIEW events_dedup AS
 SELECT user_id, event, event_time
