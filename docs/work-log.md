@@ -3,6 +3,14 @@
 Newest entries at top. One entry per work session.
 
 ---
+### 2026-09-30
+- Cleaned the data: removed 7,720 duplicate events and 2,000 bots (rule: more than 10 events per user) using SQL views. Clean data has 100,000 users.
+- Built the funnel: 100,000 visits → 3,181 payments (3.2% overall). Biggest drop is view_product → add_to_cart (74.6% lost); 48.5% of users who start checkout don't pay.
+- Segment breakdown: mobile checkout → pay is 42.5% vs 65.7% on desktop; slow pages convert at 1.8% vs 3.8% on fast pages; both effects hold when checked together. Source and city show no meaningful difference (about 3.1–3.5%).
+- Cohort analysis: only 842 users (0.8%) return on another day; weekly conversion is stable at 2.9–3.3%.
+- Completed all Week 3 tasks in plan.md.
+- **Next:** Week 4 — design the A/B test (experiment flag: old vs. new checkout).
+
 ### 2026-09-29
 - Generated 100,000 users plus 2,000 bots with duplicate events and missing values, and loaded everything into PostgreSQL.
 - Ran raw-data checks in PostgreSQL (before cleaning):

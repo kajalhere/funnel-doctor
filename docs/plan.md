@@ -13,10 +13,10 @@
 - [X] Load into PostgreSQL
 
 ## Week 3: Clean and find the leak
-- [ ] Write SQL/Python checks to find and remove duplicates and bots
-- [ ] Write SQL to count users per funnel step and drop-off %
-- [ ] Break down drop-off by device, city, source
-- [ ] Try a cohort query: do same-week signups return?
+- [X] Write SQL/Python checks to find and remove duplicates and bots
+- [X] Write SQL to count users per funnel step and drop-off %
+- [X] Break down drop-off by device, city, source
+- [X] Try a cohort query: do same-week signups return?
 
 ## Week 4: A/B test
 - [ ] Add experiment flag: old checkout vs. new checkout
