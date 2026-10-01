@@ -3,6 +3,15 @@
 Newest entries at top. One entry per work session.
 
 ---
+
+### 2026-10-01
+- Created notebooks 01_ab_test_setup and 02_ab_test_analysis. Randomly split 100,000 users into old/new checkout (50,089 new, 49,911 old) and saved results to `experiment_results` in PostgreSQL.
+- Overall test (users who started checkout): new 56.0% vs old 51.7%, lift 4.3 points, 95% CI 1.8 to 6.8, p = 0.0008, so the result is significant.
+- By device: mobile +5.1 points (p = 0.003, significant); desktop +2.6 (p = 0.19), tablet and unknown not significant (small groups).
+- Limitations: synthetic data with a built-in effect, smaller groups within each device, novelty effects could not be measured.
+- Completed all Week 4 tasks in plan.md.
+- **Next:** Week 5, the dashboard (funnel, drop-off by segment, test result, recommendation).
+
 ### 2026-09-30
 - Cleaned the data: removed 7,720 duplicate events and 2,000 bots (rule: more than 10 events per user) using SQL views. Clean data has 100,000 users.
 - Built the funnel: 100,000 visits → 3,181 payments (3.2% overall). Biggest drop is view_product → add_to_cart (74.6% lost); 48.5% of users who start checkout don't pay.

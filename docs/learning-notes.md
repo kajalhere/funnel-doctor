@@ -4,6 +4,10 @@ Newest entries at top. One entry per new concept learned.
 
 ---
 
+### 2026-10-01 — p-value and confidence interval (plain terms)
+- **p-value:** how likely it is to see a difference this big if the change did nothing. Below 0.05 means the difference is unlikely to be luck.
+- **Confidence interval:** the range where the true difference probably lies. If it includes zero, we can't be sure there is any real difference.
+
 ### 2026-09-27 — Funnel analysis (concept)
 A funnel is the sequence of steps a user takes toward a goal (e.g., Visit → View product → Add to cart → Start checkout → Pay). At each step, some users drop off. Funnel analysis measures the drop-off % at each step to find where the biggest problem is.
 

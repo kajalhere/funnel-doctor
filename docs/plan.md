@@ -19,10 +19,10 @@
 - [X] Try a cohort query: do same-week signups return?
 
 ## Week 4: A/B test
-- [ ] Add experiment flag: old checkout vs. new checkout
-- [ ] Run significance test in SciPy comparing payment rates
-- [ ] Report result with confidence interval in plain language
-- [ ] Check for issues (uneven group sizes, novelty effects)
+- [X] Add experiment flag: old checkout vs. new checkout
+- [X] Run significance test in SciPy comparing payment rates
+- [X] Report result with confidence interval in plain language
+- [X] Check for issues (uneven group sizes, novelty effects)
 
 ## Week 5: Dashboard and portfolio
 - [ ] Build Power BI/Tableau dashboard: funnel, drop-off by segment, test result, recommendation

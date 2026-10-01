@@ -4,6 +4,13 @@ Record of key choices and the reasoning behind them.
 
 ---
 
+### Decision: New checkout helps mobile users more (simulated effect)
+**Date:** 2026-10-01
+**Decision:** In the synthetic A/B test, the new checkout raises payment (after starting checkout) by about 7.5 points on mobile and about 2 points on other devices.
+**Reasoning:** Week 3 showed mobile has the weakest checkout-to-pay rate (42.5% vs 65.7% on desktop), so a mobile-focused redesign is the realistic fix. The effect was set before running the test, and users were randomly split 50/50 with a fixed seed (42). Since the data is synthetic, the result shows my method, not a real-world finding.
+
+---
+
 ### Decision: Use fully synthetic event data (not Kaggle or Maven Analytics)
 **Date:** 2026-09-27
 **Options considered:**
