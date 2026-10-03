@@ -40,4 +40,4 @@ At each step, some users quit. The project finds where the biggest drop-off is, 
 - Existing resume project: Air Quality Sensors Reliability Analysis (sensor-level reliability scoring, Python + PostgreSQL). Funnel Doctor is meant to complement it by adding business-metrics and experimentation skills rather than repeating station/sensor-style analysis.
 
 ## Status
-Planning stage — data generation not yet started.
+The analysis, A/B test and dashboard are complete. Remaining: walkthrough practice and resume bullets.

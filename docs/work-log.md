@@ -4,6 +4,12 @@ Newest entries at top. One entry per work session.
 
 ---
 
+### 2026-10-03
+- Exported three summary tables from PostgreSQL (funnel, device, A/B test) and built a one-page Power BI dashboard: funnel chart, checkout-to-pay by device, old vs new checkout by device, and a recommendation box.
+- Added three headline cards (3.2% of visitors pay, 48.5% quit at checkout, +4.3 points lift) and highlighted mobile as the weakest device.
+- Saved funnel_doctor.pbix, a PDF export and a dashboard screenshot; wrote README.md.
+- **Next:** practise the 10-minute walkthrough and write 3 resume bullets.
+
 ### 2026-10-01
 - Created notebooks 01_ab_test_setup and 02_ab_test_analysis. Randomly split 100,000 users into old/new checkout (50,089 new, 49,911 old) and saved results to `experiment_results` in PostgreSQL.
 - Overall test (users who started checkout): new 56.0% vs old 51.7%, lift 4.3 points, 95% CI 1.8 to 6.8, p = 0.0008, so the result is significant.

@@ -25,8 +25,8 @@
 - [X] Check for issues (uneven group sizes, novelty effects)
 
 ## Week 5: Dashboard and portfolio
-- [ ] Build Power BI/Tableau dashboard: funnel, drop-off by segment, test result, recommendation
-- [ ] Write README: problem, data generation method, findings, limitations
+- [X] Build Power BI/Tableau dashboard: funnel, drop-off by segment, test result, recommendation
+- [X] Write README: problem, data generation method, findings, limitations
 - [ ] Practice 10-minute walkthrough
 - [ ] Write 3 resume bullets using only real project numbers
 
